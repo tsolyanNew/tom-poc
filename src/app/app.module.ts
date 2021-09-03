@@ -6,18 +6,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
-import { HeroesComponent } from './heroes/heroes.component';
+import { PatientSummaryModule } from './patient-summary/patient-summary.module';
 import { EffectsModule } from '@ngrx/effects';
+import { PatientSummaryComponent } from './patient-summary/patient-summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    PatientSummaryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    PatientSummaryModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
