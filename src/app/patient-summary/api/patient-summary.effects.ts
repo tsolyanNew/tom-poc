@@ -17,7 +17,7 @@ export class PatientSummaryEffects {
         ofType('[Patient Summary API] Invoke API'),
         mergeMap((action) =>
             this.patientSummaryService.getPatientSummary(action)
-            .pipe(map((data) => ({ type: '[Patient Summary API] Load Patient Summary Success', patientSummary: data })))
+            .pipe(map((data) => ({ type: '[Patient Summary API] Load Success', patientSummary: data })))
         )));
 }
 

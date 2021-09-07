@@ -13,10 +13,7 @@ export class PatientSummaryComponent implements OnInit {
   constructor(private store: Store<{ patientSummary:  IPatientSummary}>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(invokePatientSummaryAPI({patientId: '333'}));
-
-
-    console.log('now')
+    this.store.dispatch(invokePatientSummaryAPI({patientId: '444'}));
   }
 
 }

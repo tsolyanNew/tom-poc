@@ -6,6 +6,6 @@ export const loadPatientSummary = createAction(
     props<{patientSummary: IPatientSummary}>()
 );
 export const invokePatientSummaryAPI = createAction(
-    '[Patient Summary  API] Invoke API',
+    '[Patient Summary API] Invoke API',
     props<{patientId: string}>()
 );
