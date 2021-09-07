@@ -18,7 +18,7 @@ export class PatientSummaryEffects {
         mergeMap((action) =>
             this.patientSummaryService.getPatientSummary(action)
             .pipe(map((data) => ({ type: PatientSummaryActions.PATIENT_SUMMARY_SUCCESS, patientSummary: data })))
-        )));
+    )));
 }
 
 

@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { IPatientSummary } from './patient-summary.interface';
-import { AppState } from '../../api/reducers/index'
+import { AppState } from '../../api/app.interface';
 
 
 export const patientSummary = (patientId: string) => createSelector(
