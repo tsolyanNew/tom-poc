@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { IPatientSummary } from './api/patient-summary.interface';
+import { invokePatientSummaryAPI } from './api/patient-summary.actions';
 
 @Component({
   selector: 'patient-summary',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientSummaryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{ patientSummary:  IPatientSummary}>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(invokePatientSummaryAPI({patientId: '333'}));
+
+
+    console.log('now')
   }
 
 }
+
