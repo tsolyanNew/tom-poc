@@ -1,15 +1,14 @@
 import { createSelector } from '@ngrx/store';
 import { IPatientSummary } from './patient-summary.interface';
-import { PatientSummaryState } from './patient-summary.state';
-
-export const patientSummarySelector =(state: PatientSummaryState) => state.patientSummary;
+import { AppState } from '../../api/reducers/index'
 
 
 export const patientSummary = (patientId: string) => createSelector(
-    patientSummarySelector,
+    (state: AppState) => state.patientSummary,
     (patientSummary: IPatientSummary) => {
+        // this is hack just for demo
         patientSummary.patientId = patientId
+        
         return patientSummary
     }
-
 )

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { PatientSummaryModule } from './patient-summary/patient-summary.module';
 import { PatientSummaryComponent } from './patient-summary/patient-summary.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -20,12 +19,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     AppRoutingModule,
     BrowserAnimationsModule,
     PatientSummaryModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    }),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      autoPause: true, // Pauses recording actions and state changes when the extension window is not open
+      maxAge: 25,
+      autoPause: true,
     }),
   ],
   providers: [],
