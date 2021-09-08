@@ -50,7 +50,7 @@ export interface IVitals {
 };
 
 export interface IConditions {
-    conditions: Array<{
+    items: Array<{
         id: string;
         code: string;
         description: string;

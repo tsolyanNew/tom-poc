@@ -4,7 +4,6 @@ import { map, mergeMap } from 'rxjs/operators';
 import { PatientSummaryService } from './patient-summary.service';
 import * as PatientSummaryActions from './patient-summary.actions'
 
-
 @Injectable()
 export class PatientSummaryEffects {
 
@@ -14,12 +13,12 @@ export class PatientSummaryEffects {
 
   loadPatientSummary$ = createEffect(() =>
     this.actions$.pipe(
-        ofType(PatientSummaryActions.INVOKE_PATIENT_SUMMARY),
-        mergeMap((action) =>
-            this.patientSummaryService.getPatientSummary(action)
-            .pipe(map((data) => ({ type: PatientSummaryActions.PATIENT_SUMMARY_SUCCESS, patientSummary: data })))
-    )));
+      ofType(PatientSummaryActions.INVOKE_PATIENT_SUMMARY),
+      mergeMap((action) =>
+        this.patientSummaryService.getPatientSummary(action).pipe(
+          map((data) => ({ type: PatientSummaryActions.PATIENT_SUMMARY_SUCCESS, patientSummary: data }))
+        )
+      )
+    )
+  );
 }
-
-
-
