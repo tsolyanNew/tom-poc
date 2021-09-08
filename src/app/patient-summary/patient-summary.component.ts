@@ -10,11 +10,10 @@ import * as PatientSummaryActions from './api/patient-summary.actions'
 })
 export class PatientSummaryComponent implements OnInit {
 
-  constructor(private store: Store<{ patientSummary:  IPatientSummary}>) { }
+  constructor(private store: Store<{patientSummary:  IPatientSummary}>) {}
 
   ngOnInit(): void {
     this.store.dispatch(PatientSummaryActions.invokePatientSummaryAPI({patientId: '1'}));
   }
 
 }
-

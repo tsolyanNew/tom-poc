@@ -127,7 +127,7 @@ export class PatientSummaryService {
     notes: {}
   };
 
-  constructor() { }
+  constructor() {}
 
   public getPatientSummary(patientId: string): Observable<IPatientSummary> {
     return of(this.mockPatientSummary)
