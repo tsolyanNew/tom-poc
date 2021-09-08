@@ -32,7 +32,7 @@ export class PatientSummaryService {
       },
       organizations: [
         {name: 'united org', id: '1'},
-        {name: 'org1', 'id': '2'},
+        {name: 'org1', id: '2'},
         {name: 'org2', id: '3'}
       ]
     },
