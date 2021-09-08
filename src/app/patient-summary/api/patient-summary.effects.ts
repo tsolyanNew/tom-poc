@@ -14,7 +14,7 @@ export class PatientSummaryEffects {
 
   loadPatientSummary$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(PatientSummaryActions.INVOKE_PATIENT_SUMMARY),
+      ofType(PatientSummaryActions.PATIENT_SUMMARY_INVOKE),
       mergeMap((action) =>
         this.patientSummaryService.getPatientSummary(action).pipe(
           map((data) => ({type: PatientSummaryActions.PATIENT_SUMMARY_SUCCESS, patientSummary: data}))

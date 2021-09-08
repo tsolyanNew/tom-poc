@@ -8,7 +8,7 @@ export const initialState: IPatientSummary = {
 
 const patientSummaryReducer = createReducer(
     initialState,
-    on(PatientSummaryActions. patientSummarySuccess, state => ({ ...state, patientSummary: state })),
+    on(PatientSummaryActions.patientSummarySuccess, state => ({...state, patientSummary: state})),
   );
 
   export function reducer(state: IPatientSummary | undefined, action: Action) {
