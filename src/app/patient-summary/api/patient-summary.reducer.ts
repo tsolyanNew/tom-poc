@@ -5,7 +5,10 @@ import { AppInitialState } from 'src/app/api/app-initial.state';
 
 const patientSummaryReducer = createReducer(
   AppInitialState.patientSummary,
-  on(PatientSummaryActions.patientSummarySuccess, state => ({...state, patientSummary: state})),
+  on(PatientSummaryActions.patientSummarySuccess, state => ({
+    ...state,
+    patientSummary: state
+  })),
 );
 
 export function reducer(state: IPatientSummary | undefined, action: Action) {
