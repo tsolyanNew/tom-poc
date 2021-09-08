@@ -7,6 +7,7 @@ import { IPatientSummary } from './patient-summary.interface';
 })
 export class PatientSummaryService {
 
+  // this is a hack while service is being created
   private mockPatientSummary: IPatientSummary = {
     patientId: '1',
     summaryHeader: {
