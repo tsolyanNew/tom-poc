@@ -13,8 +13,10 @@ export class SummaryHeaderComponent implements OnInit {
   public summaryHeader!: ISummaryHeader;
   public summaryHeader$!: Observable<ISummaryHeader>;
 
-  constructor(private state: State<{ payload: IPatientSummary }>,
-    private store: Store) { }
+  constructor(
+    private state: State<{ payload: IPatientSummary }>,
+    private store: Store
+  ) { }
 
   ngOnInit() {
     // this will get the one time state as is
@@ -23,7 +25,6 @@ export class SummaryHeaderComponent implements OnInit {
     // this will return an observable of the state
     this.summaryHeader$ = (this.store
       .pipe(select((state: any) => state?.payload?.patientSummary?.summaryHeader || {})));
-
 
     console.log(this.summaryHeader)
     this.summaryHeader$.subscribe(summaryHeader => console.log(summaryHeader))
