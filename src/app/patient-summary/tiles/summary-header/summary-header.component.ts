@@ -18,15 +18,15 @@ export class SummaryHeaderComponent implements OnInit {
 
   ngOnInit() {
     // this will get the one time state as is
-    this.summaryHeader = (this.state.getValue()?.payload?.patientSummary?.summaryHeader || {} as ISummaryHeader);
+    this.summaryHeader = (this.state.getValue()?.payload?.patientSummary?.summaryHeader || {});
 
     // this will return an observable of the state
     this.summaryHeader$ = (this.store
-      .pipe(select((state: any) => state?.payload?.patientSummary?.summaryHeader || {} as ISummaryHeader)));
+      .pipe(select((state: any) => state?.payload?.patientSummary?.summaryHeader || {})));
 
 
     console.log(this.summaryHeader)
-    this.summaryHeader$.subscribe(val => console.log(val))
+    this.summaryHeader$.subscribe(summaryHeader => console.log(summaryHeader))
   }
 
 }
