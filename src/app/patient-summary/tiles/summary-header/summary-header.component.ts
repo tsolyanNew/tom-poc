@@ -14,7 +14,7 @@ export class SummaryHeaderComponent implements OnInit {
   constructor(private state: State<{ payload: IPatientSummary }>) { }
 
   ngOnInit() {
-    this.summaryHeader = (this.state.getValue()?.payload?.patientSummary?.summaryHeader as ISummaryHeader) || {};
+    this.summaryHeader = (this.state.getValue()?.payload?.patientSummary?.summaryHeader || {} as ISummaryHeader);
     console.log(this.summaryHeader)
   }
 
