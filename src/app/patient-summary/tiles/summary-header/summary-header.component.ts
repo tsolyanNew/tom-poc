@@ -15,7 +15,7 @@ export class SummaryHeaderComponent implements OnInit {
 
   constructor(
     private state: State<{ payload: IPatientSummary }>,
-    private store: Store
+    private store: Store<{ payload: IPatientSummary }>
   ) { }
 
   ngOnInit() {
