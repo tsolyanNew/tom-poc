@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { State } from '@ngrx/store';
-import { ISummaryHeader } from '../../api/patient-summary.interface';
+import { IPatientSummary, ISummaryHeader } from '../../api/patient-summary.interface';
 
 @Component({
   selector: 'summary-header',
@@ -11,7 +11,7 @@ export class SummaryHeaderComponent implements OnInit {
 
   public summaryHeader!: ISummaryHeader;
 
-  constructor(private state: State<any>) { }
+  constructor(private state: State<{ payload: IPatientSummary }>) { }
 
   ngOnInit() {
     this.summaryHeader = (this.state.getValue()?.payload?.patientSummary?.summaryHeader as ISummaryHeader) || {};
