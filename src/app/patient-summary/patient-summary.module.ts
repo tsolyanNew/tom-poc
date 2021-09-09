@@ -11,7 +11,7 @@ import { patientSummaryReducer } from './api/patient-summary.reducer'
   imports: [
     CommonModule,
     EffectsModule.forRoot([PatientSummaryEffects]),
-    StoreModule.forRoot({ payload: patientSummaryReducer }),
+    StoreModule.forRoot({ patientSummary: patientSummaryReducer }),
   ]
 })
 export class PatientSummaryModule { }

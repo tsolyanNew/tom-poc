@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { IPatientSummary } from '../../api/patient-summary.interface';
+import { IPatientSummary, ISummaryHeader } from '../../api/patient-summary.interface';
 
 @Component({
   selector: 'summary-header',
@@ -9,8 +9,8 @@ import { IPatientSummary } from '../../api/patient-summary.interface';
   styleUrls: ['./summary-header.component.scss']
 })
 export class SummaryHeaderComponent implements OnInit {
-  public patientSummary$: Observable<IPatientSummary>;
-  public summaryHeader: any;
+  public patientSummary$: Observable<any>;
+  public summaryHeader!: ISummaryHeader;
 
   constructor(private store: Store<{ patientSummary: IPatientSummary }>) {
     this.patientSummary$ = this.store.select('patientSummary')
@@ -18,7 +18,7 @@ export class SummaryHeaderComponent implements OnInit {
 
   ngOnInit() {
     this.patientSummary$.subscribe(el => {
-      this.summaryHeader = el
+      this.summaryHeader = el.patientSummary.summaryHeader
       console.log(this.summaryHeader)
     })
   }
