@@ -13,7 +13,7 @@ export class PatientSummaryComponent implements OnInit {
   constructor(private store: Store<{ patientSummary: IPatientSummary }>) { }
 
   ngOnInit(): void {
-    // the argument here is not being used. when API is ready it will pass the patient ID that will be used by call to get the patient summary by id
+    // the argument here is not being used now but when API is ready it will pass the patient ID that will be used by call to get the patient summary by id
     this.store.dispatch(PatientSummaryActions.invokePatientSummaryAPI({ patientId: '1' }));
   }
 

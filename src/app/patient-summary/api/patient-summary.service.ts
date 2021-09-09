@@ -12,19 +12,19 @@ export class PatientSummaryService {
     patientId: '1',
     summaryHeader: {
       patient: {
-      id: '1',
-      firstName: 'testuser1',
-      lastName: 'testuserLastName',
-      dob: new Date('1981-01-01'),
-      sex: 'F',
-      address: {
-        street: '123 Main st',
-        city: 'Downingtown',
-        state: 'PA',
-        zip: 19226,
-      }
+        id: '1',
+        firstName: 'testuser1',
+        lastName: 'testuserLastName',
+        dob: new Date('1981-01-01'),
+        sex: 'F',
+        address: {
+          street: '123 Main st',
+          city: 'Downingtown',
+          state: 'PA',
+          zip: 19226,
+        }
       },
-        provider: {
+      provider: {
         id: '100',
         title: 'DR',
         firstName: 'Michael',
@@ -32,9 +32,9 @@ export class PatientSummaryService {
         status: 'any',
       },
       organizations: [
-        {name: 'united org', id: '1'},
-        {name: 'org1', id: '2'},
-        {name: 'org2', id: '3'}
+        { name: 'united org', id: '1' },
+        { name: 'org1', id: '2' },
+        { name: 'org2', id: '3' }
       ]
     },
     vitals: {
@@ -81,14 +81,14 @@ export class PatientSummaryService {
           id: '4',
           date: new Date('1987-12-03'),
           doctor: 'Joe',
-           testType: {
+          testType: {
             name: 'ECG',
             ccdURL: 'URL'
           }
         }
       ]
     },
-     medications: {
+    medications: {
       items: [
         {
           id: '5',
@@ -116,7 +116,7 @@ export class PatientSummaryService {
         {
           id: '8',
           activeAllergy: 'N',
-            reaction: {
+          reaction: {
             value: 'TBD',
             severity: 'low'
           }
@@ -127,9 +127,11 @@ export class PatientSummaryService {
     notes: {}
   };
 
-  constructor() {}
+  constructor() { }
 
   public getPatientSummary(patientId: string): Observable<IPatientSummary> {
+    // there will be a http GET here that gets the patientSummary for the given patientId in the argument
+    // below hack is just for POC
     return of(this.mockPatientSummary)
   }
 }
