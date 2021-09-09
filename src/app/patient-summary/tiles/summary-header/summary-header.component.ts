@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { State } from '@ngrx/store';
+import { select, State, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { IPatientSummary, ISummaryHeader } from '../../api/patient-summary.interface';
 
 @Component({
@@ -10,12 +11,22 @@ import { IPatientSummary, ISummaryHeader } from '../../api/patient-summary.inter
 export class SummaryHeaderComponent implements OnInit {
 
   public summaryHeader!: ISummaryHeader;
+  public summaryHeader$!: Observable<ISummaryHeader>;
 
-  constructor(private state: State<{ payload: IPatientSummary }>) { }
+  constructor(private state: State<{ payload: IPatientSummary }>,
+    private store: Store) { }
 
   ngOnInit() {
+    // this will get the one time state as is
     this.summaryHeader = (this.state.getValue()?.payload?.patientSummary?.summaryHeader || {} as ISummaryHeader);
+
+    // this will return an observable of the state
+    this.summaryHeader$ = (this.store
+      .pipe(select((state: any) => state?.payload?.patientSummary?.summaryHeader || {} as ISummaryHeader)));
+
+
     console.log(this.summaryHeader)
+    this.summaryHeader$.subscribe(val => console.log(val))
   }
 
 }
