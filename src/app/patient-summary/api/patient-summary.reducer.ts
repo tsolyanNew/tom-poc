@@ -5,12 +5,6 @@ import { AppInitialState } from 'src/app/api/app-initial.state';
 
 export const patientSummaryReducer = createReducer(
   AppInitialState.patientSummary,
-  on(PatientSummaryActions.patientSummarySuccess, state => ({
-    ...state,
-    patientSummary: state
-  })),
+  on(PatientSummaryActions.patientSummarySuccess, (state, result) => ({ patientSummary: result }))
 );
 
-export function reducer(state: IPatientSummary | undefined, action: Action) {
-  return patientSummaryReducer(state, action);
-}

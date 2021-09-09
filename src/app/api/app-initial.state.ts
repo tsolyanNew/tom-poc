@@ -1,5 +1,6 @@
 export const AppInitialState = {
     patientSummary: {
-        patientId: '000'
+        // patientId: '000',
+        patientSummary: {}
     }
 }
