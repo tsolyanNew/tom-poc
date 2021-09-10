@@ -6,17 +6,17 @@ export const PATIENT_SUMMARY_INVOKE = '[Patient Summary API] Invoke';
 export const PATIENT_SUMMARY_SUCCESS = '[Patient Summary API] Load Success';
 export const PATIENT_SUMMARY_ERROR = '[Patient Summary API] Load Error';
 
-export const invokePatientSummaryAPI = createAction(
+export const getPatientSummary = createAction(
   PATIENT_SUMMARY_INVOKE,
   props<{ patientId: string }>()
 );
 
-export const patientSummarySuccess = createAction(
+export const getPatientSummarySuccess = createAction(
   PATIENT_SUMMARY_SUCCESS,
   props<IPatientSummary>()
 );
 
-export const patientSummaryError = createAction(
+export const getPatientSummaryError = createAction(
   PATIENT_SUMMARY_ERROR,
-  props<{ payload: HttpErrorResponse }>(),
+  props<{ error: HttpErrorResponse }>(),
 );

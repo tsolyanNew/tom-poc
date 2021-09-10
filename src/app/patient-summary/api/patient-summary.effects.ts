@@ -17,7 +17,7 @@ export class PatientSummaryEffects {
       ofType(PatientSummaryActions.PATIENT_SUMMARY_INVOKE),
       exhaustMap((action) =>
         this.patientSummaryService.getPatientSummary(action).pipe(
-          map((data) => (PatientSummaryActions.patientSummarySuccess(data)))
+          map((data) => (PatientSummaryActions.getPatientSummarySuccess(data)))
         ),
       ),
       catchError((error) => of({ type: PatientSummaryActions.PATIENT_SUMMARY_ERROR, payload: { error } }))
