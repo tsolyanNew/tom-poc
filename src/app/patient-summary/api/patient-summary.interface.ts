@@ -91,3 +91,10 @@ export interface IAllergies {
     }>;
     ccdURL: string;
 };
+
+export interface IPatientSummaryStoreResponse {
+    payload: {
+        patientSummary: IPatientSummary;
+        loading: boolean;
+    };
+}
