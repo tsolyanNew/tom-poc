@@ -1,7 +1,5 @@
 import { IPatientSummary } from "../patient-summary/api/patient-summary.interface";
 
 export const AppInitialState = {
-    patientSummary: {
-        patientSummary: {} as IPatientSummary
-    }
+    patientSummary: {} as IPatientSummary
 }
