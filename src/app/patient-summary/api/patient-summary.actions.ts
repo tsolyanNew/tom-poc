@@ -6,7 +6,7 @@ export const PATIENT_SUMMARY_INVOKE = '[Patient Summary API] Invoke';
 export const PATIENT_SUMMARY_SUCCESS = '[Patient Summary API] Load Success';
 export const PATIENT_SUMMARY_ERROR = '[Patient Summary API] Load Error';
 
-export const getPatientSummary = createAction(
+export const getPatientSummaryInvoke = createAction(
   PATIENT_SUMMARY_INVOKE,
   props<{ patientId: string }>()
 );
