@@ -25,7 +25,6 @@ export class SummaryHeaderComponent implements OnInit {
 
     // this will return an observable of the state
     // it also gives the UI a loading state to run spinners
-    this.isLoading = true;
     this.summaryHeader$ = (this.store
       .pipe(
         select((store: IPatientSummaryStoreResponse) => {
